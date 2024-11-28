@@ -1,9 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  filters: {
-    name: "",
-  },
+  name: "",
 };
 
 const slice = createSlice({
@@ -11,9 +9,10 @@ const slice = createSlice({
   initialState,
   reducers: {
     filterChange: (state, action) => {
-      state.filters.name = action.payload;
+      state.name = action.payload;
     },
   },
 });
 
-export const filterReducer = slice.actions;
+export const { filterChange } = slice.actions;
+export const filterReducer = slice.reducer;
